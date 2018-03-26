@@ -3,9 +3,9 @@
         <div class="col-md-4 col-8 align-self-center badge badge-default p-4">
             <div class="row">
                 <div class="col">
-                    <div class="card" *ngFor="let album of albums" [routerLink]="'/album/' + album.albumId">
+                    <div class="card" *ngFor="let album of albums; let i = index" [routerLink]="'/album/' + i + '/' + album.albumId">
                         <div class="card-body">
-                            Album #{{album.albumId}}
+                            Album #{{i + 1}}
                         </div>
                     </div>
                 </div>
