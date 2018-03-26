@@ -1,21 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { AlbumsService } from './albums.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  providers: [AlbumsService]
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  albums: Array<any>;
+export class AppComponent {
 
-  constructor(private albumsService: AlbumsService) {
-  }
-
-  ngOnInit(): void {
-    this.albumsService.list(3).subscribe((albums) => {
-      this.albums = albums;
-    })
-  }
 }
