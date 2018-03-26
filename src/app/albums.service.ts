@@ -37,7 +37,7 @@ export class AlbumsService {
       });
   }
 
-  get(albumId: number): Observable<any> {
+  get(last: number, albumId: number): Observable<any> {
     let url = environment.apiUrl + 'photos';
     return this.http
       .get(url)
@@ -54,6 +54,12 @@ export class AlbumsService {
           return 0;
         }).filter((album) => {
           return album.albumId = albumId;
+        }).filter((album) => {
+          count++;
+          if (count <= last) {
+            return true;
+          }
+          return false;
         })
       });
   }

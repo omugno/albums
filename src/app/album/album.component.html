@@ -1,3 +1,16 @@
-<p>
-  album works!
-</p>
+<div class="container h-100 w-100">
+    <div class="row align-middle justify-content-center h-100">
+        <div class="col-10 align-self-center badge badge-default p-4">
+            <div class="row">
+                <div class="col">
+                    <div class="card" *ngFor="let photo of photos">
+                        <img class="card-img-top" [src]="photo.thumbnailUrl">
+                        <div class="card-body">
+                            <h5 class="card-title">{{photo.title}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
